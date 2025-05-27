@@ -1,8 +1,8 @@
 package com.vaintale.utils;
 
-import cn.hutool.core.util.NumberUtil;
 import com.google.common.base.Splitter;
 import com.vaintale.base.vo.TreeVO;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -37,7 +37,7 @@ public class StreamUtil {
     }
 
     /**
-     * 字符串切割转list
+     * 字符串切割转,仅保留纯数字部分，转换为  List<Long>
      *
      * @param str
      * @return {@link List }<{@link Long }>
@@ -46,7 +46,8 @@ public class StreamUtil {
      */
     public static List<Long> strToList(String str) {
         List<Long> list = Splitter.on(",").trimResults().splitToList(str)
-                .stream().filter(NumberUtil::isInteger)
+                .stream().filter(StringUtils::isNumeric)
+
                 .map(Long::parseLong).collect(Collectors.toList());
         return list;
     }

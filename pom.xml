@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>io.gitee.vaintale</groupId>
+    <groupId>io.github.vaintale</groupId>
     <artifactId>onlyVainTale</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.1</version>
     <name>onlyVainTale</name>
     <description>tool for java</description>
-    <url>https://gitee.com/vaintale/${project.artifactId}</url>
+    <url>https://github.com/vaintale/${project.artifactId}</url>
     <packaging>jar</packaging>
 
 
@@ -33,13 +33,13 @@
     </developers>
     <!-- 仓库信息，必须要有，改成自己的 -->
     <scm>
-        <url>https://gitee.com/vaintale/${project.artifactId}</url>
+        <url>https://github.com/vaintale/${project.artifactId}</url>
     </scm>
     <!-- issue管理配置，改成自己的 -->
     <!-- 可以使用 <issueManagement/> 闭合标签，表示忽略该项配置，该标签必须要有，不能删除 -->
     <issueManagement>
-        <system>Gitee</system>
-        <url>https://gitee.com/vaintale/${project.artifactId}/issues</url>
+        <system>Github</system>
+        <url>https://github.com/vaintale/${project.artifactId}/issues</url>
     </issueManagement>
 
 
@@ -66,11 +66,11 @@
             <version>33.4.8-jre</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/cn.hutool/hutool-all -->
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
         <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-all</artifactId>
-            <version>5.8.38</version>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.17.0</version>
         </dependency>
     </dependencies>
 
@@ -181,58 +181,6 @@
                 </configuration>
             </plugin>
 
-            <!-- 开源协议管理插件，用于给源码生成开源协议信息头，插件不是必须的，可以删掉 -->
-            <!-- gen code license plugin -->
-            <!-- https://central.sonatype.com/artifact/com.mycila/license-maven-plugin -->
-            <plugin>
-                <groupId>com.mycila</groupId>
-                <artifactId>license-maven-plugin</artifactId>
-                <version>${license-maven-plugin.version}</version>
-                <configuration>
-                    <basedir>${basedir}</basedir>
-                    <quiet>false</quiet>
-                    <failIfMissing>true</failIfMissing>
-                    <aggregate>false</aggregate>
-                    <useDefaultExcludes>true</useDefaultExcludes>
-                    <useDefaultMapping>true</useDefaultMapping>
-                    <mapping>
-                        <java>SLASHSTAR_STYLE</java>
-                    </mapping>
-                    <strictCheck>true</strictCheck>
-                    <failIfMissing>true</failIfMissing>
-                    <aggregate>true</aggregate>
-                    <strictCheck>true</strictCheck>
-                    <encoding>${project.build.sourceEncoding}</encoding>
-                    <licenseSets>
-                        <licenseSet>
-                            <header>${basedir}/LICENSE-2.0.txt</header>
-                            <!--                            <header>com/mycila/maven/plugin/license/templates/APACHE-2.txt</header>-->
-                            <excludes>
-                                <exclude>**/README</exclude>
-                                <exclude>src/test/resources/**</exclude>
-                                <exclude>src/main/resources/**</exclude>
-                                <exclude>**/generated/**</exclude>
-                                <exclude>target/**</exclude>
-                            </excludes>
-                            <includes>
-                                <include>src/main/java/**/*.java</include>
-                            </includes>
-                        </licenseSet>
-                    </licenseSets>
-                    <properties>
-                        <owner>VainTale</owner>
-                        <email>workbyzs@outlook.com</email>
-                        <year>2025</year>
-                    </properties>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
 
