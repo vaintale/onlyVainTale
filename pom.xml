@@ -55,7 +55,7 @@
         <maven-gpg-plugin.version>3.2.7</maven-gpg-plugin.version>
         <license-maven-plugin.version>5.0.0</license-maven-plugin.version>
         <central-publishing-maven-plugin.version>0.7.0</central-publishing-maven-plugin.version>
-        <validation.version>3.5.3</validation.version>
+        <validation.version>4.0.1</validation.version>
         <guava.version>33.5.0-jre</guava.version>
         <commons-lang3.version>3.20.0</commons-lang3.version>
         <commons-csv.version>1.11.0</commons-csv.version>
