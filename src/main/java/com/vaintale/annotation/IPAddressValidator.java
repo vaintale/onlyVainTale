@@ -22,8 +22,8 @@ public class IPAddressValidator implements ConstraintValidator<ValidIP, String> 
                     "^::1$|^::$|^([0-9a-fA-F]{1,4}:){1,7}:|" +
                     "^([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}$";
 
-    private static final Pattern ipv4Pattern = Pattern.compile(IPV4_PATTERN);
-    private static final Pattern ipv6Pattern = Pattern.compile(IPV6_PATTERN);
+    private static final Pattern IPV4_PATTERN_PATT = Pattern.compile(IPV4_PATTERN);
+    private static final Pattern IPV6_PATTERN_PATT = Pattern.compile(IPV6_PATTERN);
 
     private ValidIP.IPType ipType;
     private boolean allowEmpty;
@@ -58,10 +58,10 @@ public class IPAddressValidator implements ConstraintValidator<ValidIP, String> 
     }
 
     private boolean isValidIPv4(String ipAddress) {
-        return ipv4Pattern.matcher(ipAddress).matches();
+        return IPV4_PATTERN_PATT.matcher(ipAddress).matches();
     }
 
     private boolean isValidIPv6(String ipAddress) {
-        return ipv6Pattern.matcher(ipAddress).matches();
+        return IPV6_PATTERN_PATT.matcher(ipAddress).matches();
     }
 }
