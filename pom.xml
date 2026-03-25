@@ -55,19 +55,20 @@
         <maven-gpg-plugin.version>3.2.7</maven-gpg-plugin.version>
         <license-maven-plugin.version>5.0.0</license-maven-plugin.version>
         <central-publishing-maven-plugin.version>0.7.0</central-publishing-maven-plugin.version>
-        <validation.version>4.0.1</validation.version>
+        <validation.version>4.1.0-M3</validation.version>
         <guava.version>33.5.0-jre</guava.version>
         <commons-lang3.version>3.20.0</commons-lang3.version>
         <commons-csv.version>1.11.0</commons-csv.version>
-        <jackson.version>2.19.1</jackson.version>
+        <jackson.version>3.1.0</jackson.version>
     </properties>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+        <!-- Source: https://mvnrepository.com/artifact/tools.jackson.core/jackson-databind -->
         <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
+            <groupId>tools.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.version}</version>
+            <scope>compile</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
         <dependency>
