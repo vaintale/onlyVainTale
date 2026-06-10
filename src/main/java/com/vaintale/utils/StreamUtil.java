@@ -45,11 +45,10 @@ public class StreamUtil {
      * @date 2023/06/05
      */
     public static List<Long> strToList(String str) {
-        List<Long> list = Splitter.on(",").trimResults().splitToList(str)
+        return Splitter.on(",").trimResults().splitToList(str)
                 .stream().filter(StringUtils::isNumeric)
 
                 .map(Long::parseLong).collect(Collectors.toList());
-        return list;
     }
 
 
