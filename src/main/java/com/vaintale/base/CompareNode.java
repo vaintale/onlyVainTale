@@ -8,7 +8,7 @@ package com.vaintale.base;
 public class CompareNode {
 
     /**
-     * 字段
+     * 字段key（属性名）
      */
     private String fieldKey;
 
@@ -18,9 +18,14 @@ public class CompareNode {
     private Object fieldValue;
 
     /**
-     * 字段名称
+     * 字段显示名称
      */
     private String fieldName;
+
+    /**
+     * 字段路径（用于嵌套比较）
+     */
+    private String fieldPath;
 
     public String getFieldKey() {
         return fieldKey;
@@ -46,4 +51,11 @@ public class CompareNode {
         this.fieldName = fieldName;
     }
 
+    public String getFieldPath() {
+        return fieldPath;
+    }
+
+    public void setFieldPath(String fieldPath) {
+        this.fieldPath = fieldPath;
+    }
 }
